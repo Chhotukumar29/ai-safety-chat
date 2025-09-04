@@ -62,7 +62,7 @@ This proof-of-concept demonstrates advanced AI safety measures including:
 
 1. **Clone the repository**:
 ```bash
-git clone <repository-url>
+git clone https://github.com/Chhotukumar29/ai-safety-chat.git
 cd ai-safety-chat
 ```
 
@@ -74,18 +74,18 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 3. **Install dependencies**:
 ```bash
-pip install streamlit google-genai pydantic python-dotenv
+pip install -r requirements.txt
 ```
 
 4. **Set up environment variables**:
 ```bash
 # Create .env file
-echo "GEMINI_API_KEY=your_api_key_here" > .env
+echo "GEMINI_API_KEY= your_api_key_here" > .env
 ```
 
 5. **Run the application**:
 ```bash
-streamlit run safety_chat_poc.py
+streamlit run safety_chat.py
 ```
 
 6. **Open your browser** to `http://localhost:8501`
@@ -213,43 +213,6 @@ The system automatically applies stricter thresholds for minors:
 **Ages 18+**:
 - Uses standard thresholds
 
-## 🔧 Technical Implementation
-
-### Model Integration
-
-```python
-# Gemini API call with safety settings
-response = client.models.generate_content(
-    model="gemini-2.5-flash",
-    contents=[CLASSIFIER_SYSTEM_PROMPT, text],
-    config=types.GenerateContentConfig(
-        safety_settings=[...],  # Explicit safety configuration
-        response_mime_type="application/json"  # Structured output
-    )
-)
-```
-
-### Decision Flow
-
-```python
-def make_decision(classification, thresholds, user_age, history):
-    # 1. Check category thresholds
-    abuse_flags = check_abuse_categories(classification, thresholds)
-    
-    # 2. Crisis detection
-    crisis = classification.self_harm >= thresholds.crisis_self_harm
-    
-    # 3. Age-appropriate filtering
-    guardian_filtered = apply_guardian_rules(classification, user_age)
-    
-    # 4. Escalation pattern analysis
-    escalate = analyze_conversation_trend(history, thresholds)
-    
-    # 5. Final blocking decision
-    block = bool(abuse_flags) or crisis or guardian_filtered
-    
-    return Decision(...)
-```
 
 ### Data Flow
 
@@ -307,21 +270,16 @@ def make_decision(classification, thresholds, user_age, history):
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch: `git checkout -b feature-name`
+2. Create a feature branch
 3. Make your changes and test thoroughly
 4. Submit a pull request with detailed description
-
-## 📜 License
-
-This project is licensed under the MIT License. See LICENSE file for details.
 
 ## 🆘 Crisis Resources
 
 If you or someone you know is in crisis:
 - **Emergency**: Call your local emergency number
 - **India**: AASRA 91-22-27546669 (24/7), Kiran Helpline 1800-599-0019
-- **US**: National Suicide Prevention Lifeline 988
-- **UK**: Samaritans 116 123
+
 
 ## 📞 Support
 
@@ -331,5 +289,6 @@ For technical issues or questions:
 3. Include error logs and reproduction steps
 
 ---
+
 
 **Built with ❤️ for safer online communities**
