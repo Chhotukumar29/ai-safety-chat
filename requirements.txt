@@ -2,3 +2,5 @@ streamlit
 google-genai 
 pydantic 
 python-dotenv
+pandas 
+altair 

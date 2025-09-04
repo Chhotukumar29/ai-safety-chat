@@ -1,0 +1,101 @@
+[
+  {
+    "message_id": "627a7718",
+    "role": "user",
+    "text": "I want to meet you alone",
+    "classification": {
+      "harassment": 0.4,
+      "hate": 0.0,
+      "sexual": 0.6,
+      "dangerous": 0.5,
+      "self_harm": 0.0,
+      "sentiment_negativity": 0.3,
+      "overall_risk": 0.6,
+      "rationale": "The message 'I want to meet you alone' is suggestive and can imply a desire for private, potentially inappropriate interaction. It raises concerns about boundaries and could be a precursor to unwanted advances or an unsafe situation, warranting moderate to high risk.",
+      "timestamp": "2025-09-04T12:02:43.328193"
+    },
+    "decision": {
+      "message_id": "627a7718",
+      "abuse_flags": [
+        "sexual",
+        "dangerous"
+      ],
+      "block": true,
+      "crisis": false,
+      "guardian_filtered": true,
+      "guardian_reasons": [
+        "sexual content",
+        "dangerous content"
+      ],
+      "escalate_conversation": false,
+      "explanation": "Categories: ['sexual', 'dangerous'] | Crisis: False | Guardian: True (['sexual content', 'dangerous content']) | Avg Risk: 0.60 | Growth: 0.00",
+      "timestamp": "2025-09-04T12:02:43.328193"
+    },
+    "user_age": 16,
+    "timestamp": "2025-09-04T12:02:43.328193"
+  },
+  {
+    "message_id": "b12414f2",
+    "role": "user",
+    "text": "I want to kill you.",
+    "classification": {
+      "harassment": 0.9,
+      "hate": 0.1,
+      "sexual": 0.0,
+      "dangerous": 0.95,
+      "self_harm": 0.0,
+      "sentiment_negativity": 0.95,
+      "overall_risk": 0.95,
+      "rationale": "The message contains a direct and severe threat of violence towards another person, indicating high levels of harassment and dangerous intent. This poses a severe safety risk.",
+      "timestamp": "2025-09-04T12:03:37.421896"
+    },
+    "decision": {
+      "message_id": "b12414f2",
+      "abuse_flags": [
+        "harassment",
+        "dangerous"
+      ],
+      "block": true,
+      "crisis": false,
+      "guardian_filtered": true,
+      "guardian_reasons": [
+        "abusive language",
+        "dangerous content"
+      ],
+      "escalate_conversation": false,
+      "explanation": "Categories: ['harassment', 'dangerous'] | Crisis: False | Guardian: True (['abusive language', 'dangerous content']) | Avg Risk: 0.95 | Growth: 0.00",
+      "timestamp": "2025-09-04T12:03:37.421896"
+    },
+    "user_age": 16,
+    "timestamp": "2025-09-04T12:03:37.421896"
+  },
+  {
+    "message_id": "7c3cb302",
+    "role": "user",
+    "text": "I want to say, you are a good boy.",
+    "classification": {
+      "harassment": 0.0,
+      "hate": 0.0,
+      "sexual": 0.05,
+      "dangerous": 0.0,
+      "self_harm": 0.0,
+      "sentiment_negativity": 0.0,
+      "overall_risk": 0.0,
+      "rationale": "The message is a positive compliment. There is no indication of harmful, negative, or inappropriate content. The 'sexual' score is minimal due to very slight, potential misinterpretation of 'good boy' in some contexts, but it's highly unlikely here.",
+      "timestamp": "2025-09-04T12:04:19.501805"
+    },
+    "decision": {
+      "message_id": "7c3cb302",
+      "abuse_flags": [],
+      "block": false,
+      "crisis": false,
+      "guardian_filtered": false,
+      "guardian_reasons": [],
+      "escalate_conversation": true,
+      "explanation": "Categories: [] | Crisis: False | Guardian: False ([]) | Avg Risk: 0.52 | Growth: -0.60",
+      "timestamp": "2025-09-04T12:04:19.501805"
+    },
+    "user_age": 20,
+    "timestamp": "2025-09-04T12:04:19.501805"
+  }
+]
